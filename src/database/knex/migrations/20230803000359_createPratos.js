@@ -1,12 +1,12 @@
-exports.up = knex => knex.schema.createTable("pratos", table =>{
+exports.up = knex => knex.schema.createTable("Dishes", table =>{
     table.increments("id");
     table.text("avatar");
     table.text("name");
     table.text("category");
     table.text("description");
     table.float("preco");
-    /*table.tipo("coluna").references("id_table_pai").inTable("table");*/
+    table.integer("user_id").references("id").inTable("users");
 });
 
 
-exports.down = knex => knex.schema.dropTable("pratos");
+exports.down = knex => knex.schema.dropTable("Dishes");
