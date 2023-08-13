@@ -11,6 +11,7 @@ migrationsRun();
 const app = express();
 app.use(express.json());
 
+/*teste*/
 app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
 
 
